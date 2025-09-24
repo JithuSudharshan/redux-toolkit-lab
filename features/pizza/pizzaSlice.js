@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+const createSlice = require("@reduxjs/toolkit").createSlice
 
 const initialState = {
     pizzaBase:1000
@@ -8,7 +8,7 @@ const pizzaSlice = createSlice({
     name:"pizza",
     initialState,
     reducers:{
-        pizza_order:(state,action)=>{
+        pizza_order:(state)=>{
         state.pizzaBase--;
     }
     }
@@ -16,4 +16,4 @@ const pizzaSlice = createSlice({
 
 console.log(pizzaSlice)
 module.exports = pizzaSlice.reducer; //deafault export
-module.exports.pizzaActions = pizzaSlice.actions; //Named export
+module.exports.pizzaActions = pizzaSlice.actions //Named export
