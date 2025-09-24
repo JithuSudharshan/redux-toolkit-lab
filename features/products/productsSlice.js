@@ -9,7 +9,7 @@ const initialState = {
 
 const fetchProducts = createAsyncThunk("product/fetchProducts",() => {
   return axios.get("https://fakestoreapi.com/products")
-    .then((res) => console.log(res.data))
+    .then((res) => res.data.map(products=>products.title))
 });
 
 const ProductSlice = createSlice({

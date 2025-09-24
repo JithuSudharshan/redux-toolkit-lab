@@ -6,12 +6,12 @@ const { fetchProducts } = require("./features/products/productsSlice");
 console.log("intial state",store.getState())
 // Subscribe to state changes
 const unSubscribe = store.subscribe(() => {
-  console.log("updated state: ", resultAction.type);
+  console.log("updated state: ",store.getState());
 }); 
 
 // Dispatch async thunk
 store.dispatch(fetchProducts()).then(()=>{
-    console.log("updated state:",store.getState())
+    console.log("Final state after updation of productList:",store.getState())
 })
 
 // Optional: dispatch other actions
