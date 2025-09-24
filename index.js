@@ -23,9 +23,11 @@ const unSubscribe = store.subscribe(() => {
 // Dispatch the pizza_order action
 // This will decrement pizzaBase by 1
 store.dispatch(pizzaActions.pizza_order());
+store.dispatch(pizzaActions.pizza_order());
 
 // Dispatch the burger_order action
 // This will decrement burgerBuns by 1
+store.dispatch(burgerActions.burger_order());
 store.dispatch(burgerActions.burger_order());
 
 // Unsubscribe from the store

@@ -2,6 +2,9 @@
 // createSlice simplifies creating a Redux slice:
 // - defines initial state
 // - defines reducers (functions that update state)
+
+const { pizzaActions } = require("../pizza/pizzaSlice");
+
 // - automatically generates action creators
 const createSlice = require("@reduxjs/toolkit").createSlice;
 
@@ -24,9 +27,16 @@ const burgerSlice = createSlice({
     // Decreases the number of burger buns by 1
     burger_order: (state) => {
       state.burgerBuns--;
-    },
+    }
   },
+   extraReducers:(builder)=>{
+        builder.addCase(pizzaActions.pizza_order,(state)=>{
+            state.burgerBuns--;
+        })
+    }
 });
+
+
 
 // Export the reducer as default
 // This will be used in store.js to handle the burger slice of state
