@@ -1,6 +1,6 @@
 const store = require("./app/store")
 const { burgerActions } = require("./features/burger/burgerSlice")
-const pizzaActions = require("./features/pizza/pizzaSlice").pizzaActions
+const { pizzaActions } = require("./features/pizza/pizzaSlice")
 
 console.log("initial state",store.getState())
 
