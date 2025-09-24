@@ -8,6 +8,9 @@ const configureStore = require("@reduxjs/toolkit").configureStore;
 const pizzaReducer = require("../features/pizza/pizzaSlice");
 const burgerReducer = require("../features/burger/burgerSlice");
 
+const reduxLogger = require("redux-logger");
+const logger = reduxLogger.createLogger();
+
 // Create the Redux store
 // - The store holds the entire state tree of the application
 // - The reducer option takes an object of slice reducers
@@ -19,6 +22,7 @@ const store = configureStore({
     pizza: pizzaReducer,   // state.pizza handled by pizzaReducer
     burger: burgerReducer, // state.burger handled by burgerReducer
   },
+  middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(logger)
 });
 
 // Export the store so it can be imported and used in index.js or React components
